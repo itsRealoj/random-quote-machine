@@ -27,7 +27,7 @@ class RandomQuote extends Component {
         console.log(`author: ${author}`);
         this.setState({
           quote: quote,
-          //   data: [...data],
+          author: author,
         });
       });
   }
@@ -36,6 +36,7 @@ class RandomQuote extends Component {
     return (
       <div>
         <div>{this.state.quote}</div>
+        <div>{this.state.author}</div>
       </div>
     );
   }
