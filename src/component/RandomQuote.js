@@ -4,7 +4,7 @@ class RandomQuote extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quote: 'be water!',
+      quote: '',
       data: [],
     };
   }
@@ -20,23 +20,32 @@ class RandomQuote extends Component {
       .then((data) => data.json())
       .then((d) => {
         data.push(d[Math.floor(Math.random() * Math.ceil(100))]);
-        // console.log(data[0]);
         quote = data[0].quote;
         author = data[0].author;
-        console.log(`quote: ${quote}`);
-        console.log(`author: ${author}`);
         this.setState({
-          quote: quote,
-          author: author,
+          quote,
+          author,
         });
       });
   }
 
   render() {
     return (
-      <div>
-        <div>{this.state.quote}</div>
-        <div>{this.state.author}</div>
+      <div className='container-fluid bg-secondary  w-50'>
+        <header>Random Quote Machine</header>
+        <div className='card my-auto'>
+          <div className='blockquote text-center bg-light my-auto'>
+            <blockquote>
+              <h4>
+                <i className='mb-0'></i>
+                {this.state.quote}
+              </h4>
+            </blockquote>
+            <div className='lg-6 text-right'>
+              <footer className='blockquote-footer'>{this.state.author}</footer>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
