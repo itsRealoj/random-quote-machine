@@ -10,14 +10,10 @@ class RandomQuote extends Component {
 
   componentDidMount() {
     fetch(
-      'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
+      'https://gist.githubusercontent.com/shreyasminocha/7d5dedafc1fe158f82563c1223855177/raw/325d51aca7165b2498971afcff9bed286a52dc0e/quotes.json',
     )
-      .then((results) => {
-        return results;
-      })
-      .then((data) => {
-        console.log(data);
-      });
+      .then((data) => data.json())
+      .then((d) => console.log(d));
   }
 
   render() {
