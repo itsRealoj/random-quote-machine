@@ -1,5 +1,6 @@
 import React from 'react';
 import RandomQuote from './component/RandomQuote';
+// import './styles';
 
 function App() {
   return (

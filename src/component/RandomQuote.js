@@ -55,32 +55,63 @@ class RandomQuote extends Component {
 
   render() {
     return (
-      <div className=' container my-auto bg-secondary  w-50'>
-        <header>Random Quote Machine</header>
-        <div className='card my-auto'>
-          <div className='blockquote text-center bg-light my-auto'>
-            <blockquote>
-              <h4>
-                <i className='mb-0'></i>
-                {this.state.quote}
-              </h4>
-            </blockquote>
-            <div className='lg-6 text-right'>
-              <footer className='blockquote-footer'>{this.state.author}</footer>
-            </div>
+      // <div className=' container my-auto bg-secondary  w-50'>
+      //   <header>Random Quote Machine</header>
+      //   <div className='card my-auto'>
+      //     <div className='blockquote text-center bg-light my-auto'>
+      //       <blockquote>
+      //         <h4>
+      //           <i className='mb-0'></i>
+      //           {this.state.quote}
+      //         </h4>
+      //       </blockquote>
+      //       <div className='lg-6 text-right'>
+      //         <footer className='blockquote-footer'>{this.state.author}</footer>
+      //       </div>
+      //     </div>
+      //   </div>
+      //   <div className='row my-auto'>
+      //     <button
+      //       className='btn btn-block btn-secondary col-3'
+      //       onClick={this.handleTweet.bind(this)}>
+      //       Tweet Quote
+      //     </button>
+      //     <button
+      //       className='btn btn-block btn-secondary col-3'
+      //       onClick={this.handleQuote.bind(this)}>
+      //       Add Quote
+      //     </button>
+      //   </div>
+      // </div>
+      <div id='wrapper'>
+        <h1 className='title'>Random Quote App</h1>
+
+        <div id='quote-box'>
+          <div id='text'>
+            <p>{this.state.quote}</p>
           </div>
-        </div>
-        <div className='row my-auto'>
-          <button
-            className='btn btn-block btn-secondary col-3'
-            onClick={this.handleTweet.bind(this)}>
-            Tweet Quote
-          </button>
-          <button
-            className='btn btn-block btn-secondary col-3'
-            onClick={this.handleQuote.bind(this)}>
-            Add Quote
-          </button>
+          <div id='author'>
+            <h5>{this.state.author}</h5>
+          </div>
+
+          <div id='buttons'>
+            <a
+              id='tweet-quote'
+              href={`https://twitter.com/intent/tweet?text=${this.state.quote} ${this.state.author}`}
+              target='_blank'
+              title='Post this quote on twitter!'>
+              <span>
+                <i className='fab fa-twitter twitter-icon' />
+                //fontawesome twitter icon
+              </span>
+            </a>
+            <button
+              id='new-quote'
+              className='buttons'
+              onClick={this.handleQuote.bind(this)}>
+              New Quote
+            </button>
+          </div>
         </div>
       </div>
     );
